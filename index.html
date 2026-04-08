@@ -1,262 +1,174 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VIANNA – Visual Analytics for Neuropsychological Assessments</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&display=swap" rel="stylesheet">
-<link rel="icon" type="image/svg+xml" href="https://vianna.es/app/favicon.svg">
-<link rel="shortcut icon" href="https://vianna.es/app/favicon.svg">
-<style>
-:root {
-    --primary: #0d2b45;
-    --accent: #395889;
-    --light: #f5f7fa;
-    --text: #222;
-}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VIANNA - Visual Analytics for Neuropsychological Assessments</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://vianna.es/app/favicon.svg"
+    />
+    <link rel="shortcut icon" href="https://vianna.es/app/favicon.svg" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+  </head>
 
-* { box-sizing: border-box; }
+  <body>
+    <header class="hero">
+      <img
+        src="https://vianna.es/app/app_name.svg"
+        alt="VIANNA Logo"
+        class="hero-logo"
+      />
+      <h1 class="hero-title">VIANNA</h1>
+      <p class="hero-subtitle">
+        Interactive Visual Analytics for Longitudinal Neuropsychological Data
+      </p>
+      <div class="buttons">
+        <a href="https://vianna.es/app" class="btn-primary"
+          >Launch Application</a
+        >
+        <a href="https://github.com/jorgeacostaupm/vianna" class="btn-secondary"
+          >View on GitHub</a
+        >
+      </div>
+    </header>
 
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    color: var(--text);
-    background: white;
-    line-height: 1.6;
-}
-
-header_old {
-    background: var(--primary);
-    color: white;
-    padding: 80px 20px;
-    text-align: center;
-}
-
-
-header {
-    position: relative;
-    color: white;
-    padding: 100px 20px;
-    text-align: center;
-    background: url('banner2.png') center/cover no-repeat;
-}
-
-header::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(13, 43, 69, 0.85); /* azul VIANNA con opacidad */
-}
-
-header > * {
-    position: relative;
-    z-index: 2;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.8rem;
-    font-weight: 700;
-}
-
-header h1 {
-    font-family: 'Sora', sans-serif;
-    letter-spacing: 0.05em;
-}
-
-header p {
-    font-size: 1.2rem;
-    opacity: 0.9;
-    margin-top: 15px;
-}
-
-.buttons {
-    margin-top: 30px;
-}
-
-.buttons a {
-    display: inline-block;
-    margin: 10px;
-    padding: 12px 22px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.2s;
-}
-
-.btn-primary {
-    background: var(--accent);
-    color: white;
-}
-
-.btn-secondary {
-    border: 2px solid white;
-    color: white;
-}
-
-.btn-primary:hover {
-    opacity: 0.9;
-}
-
-section {
-    padding: 10px 20px;
-    max-width: 1000px;
-    margin: auto;
-}
-
-h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: var(--primary);
-}
-
-.abstract {
-    background: var(--light);
-    padding: 25px;
-    border-radius: 8px;
-}
-
-.features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 25px;
-}
-
-.feature-box {
-    background: var(--light);
-    padding: 20px;
-    border-radius: 8px;
-}
-
-.demo img {
-    width: 100%;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-}
-
-.resources ul {
-    list-style: none;
-    padding: 0;
-}
-
-.resources li {
-    margin-bottom: 12px;
-}
-
-.resources a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-footer {
-    background: var(--primary);
-    color: white;
-    text-align: center;
-    padding: 30px 20px;
-    font-size: 0.9rem;
-}
-
-code {
-    background: #eee;
-    padding: 4px 6px;
-    border-radius: 4px;
-    font-size: 0.9rem;
-}
-</style>
-</head>
-
-<body>
-
-  <header>
-    <img src="https://vianna.es/app/app_name.svg" alt="VIANNA Logo" style="height:70px; margin-bottom:20px;">
-    <h1 style="margin-top:10px;">VIANNA</h1>
-    <p>Interactive Visual Analytics for Longitudinal Neuropsychological Data</p>
-    <div class="buttons">
-        <a href="https://vianna.es/app" class="btn-primary">Launch Application</a>
-        <a href="https://github.com/jorgeacostaupm/vianna" class="btn-secondary">View on GitHub</a>
-    </div>
-  </header>
-
-<section>
-    <h2>Abstract</h2>
-    <div class="abstract">
-        Neuropsychological assessments are widely used to monitor cognitive change and investigate progression from mild cognitive impairment (MCI) to dementia. However, exploratory analysis of longitudinal test batteries is often hindered by fragmented workflows relying on spreadsheets and ad hoc scripts.  
-        <br><br>
-        VIANNA (VIsual ANalytics for Neuropsychological Assessments) is an interactive, domain-driven visual analytics framework designed to support exploratory analysis of heterogeneous, multi-visit neuropsychological datasets. It integrates hierarchical feature construction, cohort definition, distributional comparison, longitudinal trajectory visualization, and multivariate correlation analysis within a unified, codeless environment.
-    </div>
-
-<div style="text-align:center; margin-top: 30px; margin-bottom:30px;">
-    <img src="schema.png" alt="VIANNA architecture overview" 
-         style="max-width:100%; border:0px solid #ddd; border-radius:8px;">
-    <p style="font-size:0.9rem; color:#555; margin-top:10px;">
-        Modular architecture of VIANNA. The system follows a coordinated multiple-view design integrating hierarchical feature construction, overview-based cohort definition, and task-specific analytical components.
-    </p>
-</div>
-
-</section>
-
-
-
-
-<section>
-    <h2>Key Features</h2>
-    <div class="features">
-        <div class="feature-box">
-            <strong>Hierarchical Attribute Management</strong><br>
-            Transparent and expert-guided feature derivation and dimensionality reduction.
+    <main class="site-main">
+      <section class="section">
+        <h2 class="section-title">Abstract</h2>
+        <div class="abstract">
+          <strong>Background and Objective:</strong> Neuropsychological
+          assessments are widely used to monitor cognitive change and
+          investigate progression from mild cognitive impairment (MCI) to
+          dementia. However, exploratory analysis of longitudinal test batteries
+          is often hindered by fragmented workflows that rely on spreadsheets,
+          static plots, and ad hoc scripts, which limit reproducibility,
+          iterative cohort refinement, trajectory inspection, and multivariate
+          reasoning. This work presents VIANNA (VIsual ANalytics for
+          Neuropsychological Assessments), an interactive visual analytics
+          framework designed to support exploratory analysis of longitudinal
+          neuropsychological data. <br /><br />
+          <strong>Methods:</strong> Based on a task-oriented design process, our
+          tool integrates (1) an interactive hierarchy editor for semantic
+          attribute organization, dimensionality reduction, and transparent
+          attribute derivation; (2) an overview workspace for data exploration,
+          curation, and selection; and (3) coordinated analytical components
+          supporting cohort comparison, longitudinal trajectory analysis, and
+          correlation exploration. <br /><br />
+          <strong>Results:</strong> We demonstrate our tool using the
+          multi-visit AI-Mind dataset, illustrating how interactive visual
+          analytics can support structured data exploration, data curation,
+          cohort-based comparisons, and hypothesis generation in complex
+          neuropsychological datasets within a unified interactive environment.
+          <br /><br />
+          <strong>Conclusions:</strong> VIANNA provides a domain-specific visual
+          analytics framework for exploratory longitudinal neuropsychological
+          analysis. By integrating semantic attribute management,
+          overview-driven cohort definition, and coordinated downstream
+          analytical views, it helps address the complexity of high-dimensional
+          multi-visit neuropsychological datasets.
+          <p class="abstract-preprint-wrap">
+            <a href="paper-link" class="abstract-preprint">
+              <svg
+                class="preprint-icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M7 2h7l5 5v15H7V2zm7 1.5V8h4.5L14 3.5zM9 11h8v1.5H9V11zm0 3h8v1.5H9V14zm0 3h6v1.5H9V17z"
+                />
+              </svg>
+              <span>Go to Preprint</span>
+            </a>
+          </p>
         </div>
-        <div class="feature-box">
-            <strong>Cohort-Based Comparison</strong><br>
-            Effect-size–driven ranking of group differences beyond p-values.
+
+        <div class="architecture-block">
+          <img
+            src="assets/images/vianna-schema.svg"
+            alt="VIANNA architecture overview"
+            class="architecture-image"
+          />
+          <p class="architecture-caption">
+            Modular architecture of VIANNA. The system follows a coordinated
+            multiple-view design integrating hierarchical feature construction,
+            overview-based cohort definition, and task-specific analytical
+            components.
+          </p>
         </div>
-        <div class="feature-box">
-            <strong>Longitudinal Trajectory Analysis</strong><br>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Key Features</h2>
+        <div class="features">
+          <div class="feature-box">
+            <strong>Hierarchical Attribute Management</strong><br />
+            Transparent and expert-guided feature derivation and dimensionality
+            reduction.
+          </div>
+          <div class="feature-box">
+            <strong>Cohort-Based Comparison</strong><br />
+            Effect-size-driven ranking of group differences beyond p-values.
+          </div>
+          <div class="feature-box">
+            <strong>Longitudinal Trajectory Analysis</strong><br />
             Integrated visualization and inference for repeated measures.
-        </div>
-        <div class="feature-box">
-            <strong>Correlation & Multivariate Exploration</strong><br>
+          </div>
+          <div class="feature-box">
+            <strong>Correlation & Multivariate Exploration</strong><br />
             Coordinated matrix, scatterplot, and PCA-based views.
+          </div>
         </div>
-    </div>
-</section>
+      </section>
 
-<section class="resources">
-    <h2>Resources</h2>
-    <ul>
-        <li><a href="https://viana.es/app">Application Demo</a></li>
-        <li><a href="https://github.com/jorgeacostaupm/vianna">GitHub Repository</a></li>
-        <li><a href="documentation-link">Documentation</a></li>
-        <li><a href="paper-link">Preprint</a></li>
-    </ul>
-</section>
+      <section class="section demo-video-section">
+        <h2 class="section-title">Demo Video</h2>
+        <video class="demo-video" controls preload="metadata" playsinline>
+          <source src="assets/videos/demo-vianna.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </section>
 
-<section>
-    <h2>Funding</h2>
-    <p>
-      This work has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No. 964220. This paper reflects only the authors' view and the Commission is not responsible for any use that may be made by the information it contains.
-    </p>
-</section>
-
-<section>
-    <h2>Citation</h2>
-<pre><code>@article{vianna2026,
+      <section class="section">
+        <h2 class="section-title">Citation</h2>
+        <pre><code>@article{vianna2026,
   title={VIANNA: An Interactive Visual Analytics Framework for Exploratory
 Analysis of Longitudinal Neuropsychological Assessment Data},
   author={Jorge Acosta, Pablo Toharia},
-  journal={Computers in Biology and Medicine (Under Review)},
+  journal={Computer Methods and Programs in Biomedicine (Under Review)},
   year={2026}
 }</code></pre>
-</section>
+      </section>
 
-<footer>
-    VIANNA – Visual Analytics for Neuropsychological Assessments
-    <br><br>
-    This software is provided for research and exploratory purposes only.
-</footer>
+      <section class="section">
+        <h2 class="section-title">Funding</h2>
+        <p>
+          This work has received funding from the European Union's Horizon 2020
+          research and innovation programme under grant agreement No. 964220.
+          This paper reflects only the authors' view and the Commission is not
+          responsible for any use that may be made by the information it
+          contains.
+        </p>
+      </section>
+    </main>
 
-</body>
+    <footer class="site-footer">
+      VIANNA - Visual Analytics for Neuropsychological Assessments
+      <br /><br />
+      This software is provided for research and exploratory purposes only.
+      <br /><br />
+      Contact: <a href="mailto:jorge.acosta@upm.es">jorge.acosta@upm.es</a>
+    </footer>
+  </body>
 </html>

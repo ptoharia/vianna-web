@@ -1,0 +1,51 @@
+:root {
+  --primary: #506aa1;
+  --accent: #395889;
+  --light: #f5f7fa;
+  --text: #222;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+  background: #fff;
+  line-height: 1.6;
+}
+
+.site-main {
+  display: block;
+}
+
+.section {
+  padding: 10px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+code {
+  background: #eee;
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 8px 16px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
