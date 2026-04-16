@@ -78,7 +78,11 @@
           analytical views, it helps address the complexity of high-dimensional
           multi-visit neuropsychological datasets.
           <p class="abstract-preprint-wrap">
-            <a href="paper-link" class="abstract-preprint">
+            <a
+              href="https://zenodo.org/records/19557575"
+              class="abstract-preprint"
+              target="_blank"
+            >
               <svg
                 class="preprint-icon"
                 viewBox="0 0 24 24"
@@ -134,13 +138,28 @@
 
       <section class="section demo-video-section">
         <h2 class="section-title">Demo Video</h2>
-        <video class="demo-video" controls preload="metadata" playsinline>
-          <source src="assets/videos/demo-vianna.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <div class="demo-video">
+          <iframe
+            class="demo-video-embed"
+            src="https://www.youtube.com/embed/h52_JFvjvy8"
+            title="VIANNA demo video"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            allowfullscreen
+          ></iframe>
+        </div>
       </section>
 
-      <section class="section">
+      <!--       <section class="section">
         <h2 class="section-title">Citation</h2>
         <pre><code>@article{vianna2026,
   title={VIANNA: An Interactive Visual Analytics Framework for Exploratory
@@ -149,7 +168,7 @@ Analysis of Longitudinal Neuropsychological Assessment Data},
   journal={Computer Methods and Programs in Biomedicine (Under Review)},
   year={2026}
 }</code></pre>
-      </section>
+      </section> -->
 
       <section class="section">
         <h2 class="section-title">Funding</h2>
@@ -164,11 +183,28 @@ Analysis of Longitudinal Neuropsychological Assessment Data},
     </main>
 
     <footer class="site-footer">
-      VIANNA - Visual Analytics for Neuropsychological Assessments
-      <br /><br />
-      This software is provided for research and exploratory purposes only.
-      <br /><br />
-      Contact: <a href="mailto:jorge.acosta@upm.es">jorge.acosta@upm.es</a>
+      <div class="footer-layout">
+        <div class="footer-spacer" aria-hidden="true"></div>
+        <div class="footer-text">
+          VIANNA - Visual Analytics for Neuropsychological Assessments
+          <br /><br />
+          This software is provided for research and exploratory purposes only.
+          <br /><br />
+          Contact: <a href="mailto:jorge.acosta@upm.es">jorge.acosta@upm.es</a>
+        </div>
+        <div class="footer-logos" aria-label="Partner and support logos">
+          <img
+            src="assets/images/SFS46894.png"
+            alt="SFS logo"
+            class="footer-logo"
+          />
+          <img
+            src="assets/images/Al-Mind_logo_print.png"
+            alt="AI Mind logo"
+            class="footer-logo"
+          />
+        </div>
+      </div>
     </footer>
   </body>
 </html>
